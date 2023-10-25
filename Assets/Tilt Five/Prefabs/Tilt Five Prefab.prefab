@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2842246568169247796}
   m_Father: {fileID: 6132178175923897642}
@@ -44,9 +45,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -101,6 +103,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8881024874196036000}
   m_Father: {fileID: 6132178175923897642}
@@ -151,6 +154,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6132178175923897642}
   m_RootOrder: 0
@@ -173,6 +177,8 @@ MonoBehaviour:
       FailureMode: 0
       tiltFiveXR: 1
       copyPlayerOneCameraTemplate: 1
+      copyPlayerOneObjectTemplate: 1
+      copyPlayerOnePlayerTemplate: 1
       copyCloneCameraTemplateChildren: 1
       copyPlayerOneCullingMask: 1
       copyPlayerOneFOVToggle: 1
@@ -180,6 +186,8 @@ MonoBehaviour:
       copyPlayerOneNearClipPlane: 1
       copyPlayerOneFarClipPlane: 1
       headPoseCamera: {fileID: 5096850156648964928}
+      objectTemplate: {fileID: 0}
+      playerTemplate: {fileID: 0}
       cloneCameraTemplateChildren: 0
       cullingMask:
         serializedVersion: 2
@@ -195,6 +203,7 @@ MonoBehaviour:
     scaleSettings:
       contentScaleUnit: 4
       contentScaleRatio: 5
+      legacyInvertGameboardScale: 1
       copyPlayerOneScaleRatio: 1
       copyPlayerOneScaleUnit: 1
     gameboardSettings:
@@ -221,6 +230,8 @@ MonoBehaviour:
       FailureMode: 0
       tiltFiveXR: 1
       copyPlayerOneCameraTemplate: 1
+      copyPlayerOneObjectTemplate: 1
+      copyPlayerOnePlayerTemplate: 1
       copyCloneCameraTemplateChildren: 1
       copyPlayerOneCullingMask: 1
       copyPlayerOneFOVToggle: 1
@@ -228,6 +239,8 @@ MonoBehaviour:
       copyPlayerOneNearClipPlane: 1
       copyPlayerOneFarClipPlane: 1
       headPoseCamera: {fileID: 5096850156648964928}
+      objectTemplate: {fileID: 0}
+      playerTemplate: {fileID: 0}
       cloneCameraTemplateChildren: 0
       cullingMask:
         serializedVersion: 2
@@ -243,6 +256,7 @@ MonoBehaviour:
     scaleSettings:
       contentScaleUnit: 4
       contentScaleRatio: 5
+      legacyInvertGameboardScale: 1
       copyPlayerOneScaleRatio: 1
       copyPlayerOneScaleUnit: 1
     gameboardSettings:
@@ -269,6 +283,8 @@ MonoBehaviour:
       FailureMode: 0
       tiltFiveXR: 1
       copyPlayerOneCameraTemplate: 1
+      copyPlayerOneObjectTemplate: 1
+      copyPlayerOnePlayerTemplate: 1
       copyCloneCameraTemplateChildren: 1
       copyPlayerOneCullingMask: 1
       copyPlayerOneFOVToggle: 1
@@ -276,6 +292,8 @@ MonoBehaviour:
       copyPlayerOneNearClipPlane: 1
       copyPlayerOneFarClipPlane: 1
       headPoseCamera: {fileID: 5096850156648964928}
+      objectTemplate: {fileID: 0}
+      playerTemplate: {fileID: 0}
       cloneCameraTemplateChildren: 0
       cullingMask:
         serializedVersion: 2
@@ -291,6 +309,7 @@ MonoBehaviour:
     scaleSettings:
       contentScaleUnit: 4
       contentScaleRatio: 5
+      legacyInvertGameboardScale: 1
       copyPlayerOneScaleRatio: 1
       copyPlayerOneScaleUnit: 1
     gameboardSettings:
@@ -317,6 +336,8 @@ MonoBehaviour:
       FailureMode: 0
       tiltFiveXR: 1
       copyPlayerOneCameraTemplate: 1
+      copyPlayerOneObjectTemplate: 1
+      copyPlayerOnePlayerTemplate: 1
       copyCloneCameraTemplateChildren: 1
       copyPlayerOneCullingMask: 1
       copyPlayerOneFOVToggle: 1
@@ -324,6 +345,8 @@ MonoBehaviour:
       copyPlayerOneNearClipPlane: 1
       copyPlayerOneFarClipPlane: 1
       headPoseCamera: {fileID: 5096850156648964928}
+      objectTemplate: {fileID: 0}
+      playerTemplate: {fileID: 0}
       cloneCameraTemplateChildren: 0
       cullingMask:
         serializedVersion: 2
@@ -339,6 +362,7 @@ MonoBehaviour:
     scaleSettings:
       contentScaleUnit: 4
       contentScaleRatio: 5
+      legacyInvertGameboardScale: 1
       copyPlayerOneScaleRatio: 1
       copyPlayerOneScaleUnit: 1
     gameboardSettings:
@@ -411,6 +435,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5096850156648964929}
   m_RootOrder: 0
@@ -449,6 +474,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5096850158371414808}
   - {fileID: 5096850158276147074}
@@ -482,6 +508,7 @@ Transform:
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5096850158276147074}
   m_RootOrder: 0
