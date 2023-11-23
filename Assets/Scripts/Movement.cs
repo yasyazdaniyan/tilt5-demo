@@ -8,10 +8,11 @@ public class Movement : MonoBehaviour
 {
     public GameObject gameObject1;
     public GameObject gameObject2;
-
     public float moveSpeed = 1.0f;
     public float rotateSpeed = 1.0f;
     public float zoomSpeed = 1.0f;
+ 
+
     float zoomAmount = 1.0f;
     private Animator gameObjectAnimator;
     bool isWalking;
@@ -27,11 +28,14 @@ public class Movement : MonoBehaviour
     void Update(){
         if(TiltFive.Wand.TryGetWandDevice(TiltFive.PlayerIndex.One,TiltFive.ControllerIndex.Right, out TiltFive.WandDevice wandDevice))
         {
+
             Vector2 InputMovement = wandDevice.Stick.ReadValue();
             Vector3 MovementDir = new Vector3(InputMovement.x,0,InputMovement.y);
             MovementDir = MovementDir.normalized;
             gameObject2.transform.position += MovementDir * Time.deltaTime * moveSpeed;
-            TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.position += MovementDir * Time.deltaTime * moveSpeed;
+            gameObject1.transform.position += MovementDir * Time.deltaTime * moveSpeed;
+
+            //TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.position += MovementDir * Time.deltaTime * moveSpeed;
 
             isWalking = MovementDir.magnitude >= new Vector3(0.01f,0.01f,0.01f).magnitude;
 
@@ -40,27 +44,50 @@ public class Movement : MonoBehaviour
             if (wandDevice.X.isPressed)
             {
                 //gameObject1.transform.Rotate(0,Time.deltaTime * rotateSpeed,0);
-                TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.rotation *= Quaternion.Euler(0, Time.deltaTime * rotateSpeed, 0);
+                //TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.rotation *= Quaternion.Euler(0, Time.deltaTime * rotateSpeed, 0);
+                gameObject1.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * 5f);
+                gameObject2.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * 5f);
             }
             if (wandDevice.B.isPressed)
             {
                 //gameObject1.transform.Rotate(0,-Time.deltaTime * rotateSpeed,0);
-                TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.rotation *= Quaternion.Euler(0, -Time.deltaTime * rotateSpeed, 0);
+                //TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.rotation *= Quaternion.Euler(0, -Time.deltaTime * rotateSpeed, 0);
+                gameObject1.transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime * 5f);
+                gameObject2.transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime * 5f);
 
 
             }
-            if(wandDevice.One.isPressed){
+            if(wandDevice.A.isPressed){
+                //zoomAmount += zoomSpeed * Time.deltaTime;
+                //TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.localScale = zoomAmount;
+                gameObject1.transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime *5f);
+                gameObject2.transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime *5f);
+                
+            }
+             if(wandDevice.Y.isPressed){
+                //zoomAmount -= zoomSpeed * Time.deltaTime;
+                //if(zoomAmount <= 0) zoomAmount = 0.01f;
+                //TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.localScale = zoomAmount;
+                gameObject1.transform.Rotate(Vector3.left * rotateSpeed * Time.deltaTime *5f);
+                gameObject2.transform.Rotate(Vector3.left * rotateSpeed * Time.deltaTime *5f);
+            }
+            if (wandDevice.One.isPressed)
+            {
                 zoomAmount += zoomSpeed * Time.deltaTime;
                 TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.localScale = zoomAmount;
+
+
             }
-             if(wandDevice.Two.isPressed){
+            if (wandDevice.Two.isPressed)
+            {
                 zoomAmount -= zoomSpeed * Time.deltaTime;
                 if(zoomAmount <= 0) zoomAmount = 0.01f;
                 TiltFiveManager2.Instance.playerOneSettings.gameboardSettings.currentGameBoard.localScale = zoomAmount;
+
             }
-   
-        
-    }
+
+
+        }
 }
 }
  
